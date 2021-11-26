@@ -4,7 +4,7 @@ from gensim.models import KeyedVectors
 from numpy import negative
 
 
-MODEL_FILENAME = "models\stanby-jobs-200d-word2vector.bin"
+MODEL_FILENAME = "models/stanby-jobs-200d-word2vector.bin"
 w2v = KeyedVectors.load_word2vec_format(MODEL_FILENAME, binary=True)
 
 app = Flask(__name__)
