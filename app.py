@@ -3,9 +3,12 @@ from flask import Flask, render_template, request, jsonify #追加
 from gensim.models import KeyedVectors
 from numpy import negative
 
-
+MODEL_FILENAME_WIN = "models\stanby-jobs-200d-word2vector.bin"
 MODEL_FILENAME = "models/stanby-jobs-200d-word2vector.bin"
-w2v = KeyedVectors.load_word2vec_format(MODEL_FILENAME, binary=True)
+try:
+    w2v = KeyedVectors.load_word2vec_format(MODEL_FILENAME, binary=True)
+except:
+    w2v = KeyedVectors.load_word2vec_format(MODEL_FILENAME_WIN, binary=True)
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False #日本語文字化け対策
