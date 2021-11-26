@@ -114,6 +114,10 @@ def calc():
             
         })
 
+@app.route('/')
+def index():
+    return 'hello, world'
+
 ## おまじない
 if __name__ == "__main__":
     app.run(debug=True)
