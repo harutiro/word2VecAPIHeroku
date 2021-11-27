@@ -3,8 +3,8 @@ from flask import Flask, render_template, request, jsonify #追加
 from gensim.models import KeyedVectors
 from numpy import negative
 
-MODEL_FILENAME_WIN = "models\stanby-jobs-200d-word2vector.bin"
-MODEL_FILENAME = "models/stanby-jobs-200d-word2vector.bin"
+MODEL_FILENAME_WIN = "models\wiki.vec.pt"
+MODEL_FILENAME = "models/wiki.vec.pt"
 try:
     w2v = KeyedVectors.load_word2vec_format(MODEL_FILENAME, binary=True)
 except:
