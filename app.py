@@ -36,7 +36,7 @@ def near():
             'status':'NO',
             'error':'default設定の"strが設定されていません"'
         })
-        
+
 
     try:
         w2v.most_similar(str, topn=int(get_number))
