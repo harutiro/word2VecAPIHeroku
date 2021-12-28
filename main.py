@@ -61,6 +61,7 @@ def near():
             'data':w2v.most_similar(str, topn=int(get_number)),
             
         })
+        
 
 @app.route('/calculation' ,methods=["GET"])
 def calc():
