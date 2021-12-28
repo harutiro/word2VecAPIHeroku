@@ -1,14 +1,14 @@
 from flask import Flask, render_template, request, jsonify #追加
 
-from gensim.models import KeyedVectors
+from gensim.models import word2vec
 from numpy import negative
 
 MODEL_FILENAME_WIN = "models\wiki.vec.pt"
 MODEL_FILENAME = "models/wiki.vec.pt"
 try:
-    w2v = KeyedVectors.load_word2vec_format(MODEL_FILENAME, binary=True)
+    w2v = word2vec.KeyedVectors.load_word2vec_format(MODEL_FILENAME, binary=True)
 except:
-    w2v = KeyedVectors.load_word2vec_format(MODEL_FILENAME_WIN, binary=True)
+    w2v = word2vec.KeyedVectors.load_word2vec_format(MODEL_FILENAME_WIN, binary=True)
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False #日本語文字化け対策
